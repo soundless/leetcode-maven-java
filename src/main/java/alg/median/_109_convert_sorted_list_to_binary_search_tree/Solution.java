@@ -53,6 +53,16 @@
  * TreeNode right;
  * TreeNode(int x) { val = x; }
  * }
+ * <p>
+ * Definition for a binary tree node.
+ * public package algorithms.leetcode.median._109_convert_sorted_list_to_binary_search_tree;
+ * <p>
+ * class TreeNode {
+ * int val;
+ * TreeNode left;
+ * TreeNode right;
+ * TreeNode(int x) { val = x; }
+ * }
  */
 /**
  * Definition for a binary tree node.

@@ -49,7 +49,9 @@ import java.util.List;
 
 class SummaryRanges {
 
-    /** Initialize your data structure here. */
+    /**
+     * Initialize your data structure here.
+     */
     public SummaryRanges() {
 
     }

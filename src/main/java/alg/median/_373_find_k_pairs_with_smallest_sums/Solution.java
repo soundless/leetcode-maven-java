@@ -58,7 +58,7 @@
  */
 package alg.median._373_find_k_pairs_with_smallest_sums;
 
-import java.util.*;
+import java.util.List;
 
 class Solution {
     public List<int[]> kSmallestPairs(int[] nums1, int[] nums2, int k) {

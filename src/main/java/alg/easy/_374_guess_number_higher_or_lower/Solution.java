@@ -44,6 +44,7 @@ class GuessGame.
 class GuessGame {
     public int num;
     public int guest;
+
     public int guest(int num) {
         return 0;
     }

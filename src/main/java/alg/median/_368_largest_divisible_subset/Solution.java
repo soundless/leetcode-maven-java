@@ -39,7 +39,7 @@
  */
 package alg.median._368_largest_divisible_subset;
 
-import java.util.*;
+import java.util.List;
 
 class Solution {
     public List<Integer> largestDivisibleSubset(int[] nums) {

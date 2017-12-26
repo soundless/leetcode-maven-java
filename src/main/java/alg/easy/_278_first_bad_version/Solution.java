@@ -32,7 +32,7 @@
  */
 /* The isBadVersion API is defined in the parent package algorithms.leetcode.easy._278_first_bad_version;
 
-*/
+ */
 package alg.easy._278_first_bad_version;
 
 class VersionControl {

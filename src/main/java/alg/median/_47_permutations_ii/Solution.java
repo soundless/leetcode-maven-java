@@ -28,7 +28,7 @@
  */
 package alg.median._47_permutations_ii;
 
-import java.util.*;
+import java.util.List;
 
 class Solution {
     public List<List<Integer>> permuteUnique(int[] nums) {

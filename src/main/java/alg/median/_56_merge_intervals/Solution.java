@@ -29,7 +29,6 @@
  * }
  */
 package alg.median._56_merge_intervals;
-import util.Interval;
 
 import util.Interval;
 

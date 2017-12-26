@@ -28,11 +28,16 @@
 package alg.easy._1_two_sum;
 
 class Solution {
-    public static void main(String[] args) {
-        System.out.println("Just a test");
-    }
-
     public int[] twoSum(int[] nums, int target) {
-        return null;
+        int[] results = {-1, -1};
+        for(int i = 0; i < nums.length; i++) {
+            for(int j = i + 1; j < nums.length; j++) {
+                if ( nums[i] + nums[j] == target ) {
+                    results[0] = i + 1;
+                    results[1] = j + 1;
+                }
+            }
+        }
+        return results;
     }
 }

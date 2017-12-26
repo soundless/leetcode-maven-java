@@ -49,7 +49,7 @@
  */
 package alg.median._692_top_k_frequent_words;
 
-import java.util.*;
+import java.util.List;
 
 class Solution {
     public List<String> topKFrequent(String[] words, int k) {

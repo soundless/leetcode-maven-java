@@ -33,10 +33,10 @@ package alg.median._341_flatten_nested_list_iterator;
  *
  */
 
+import util.NestedInteger;
+
 import java.util.Iterator;
 import java.util.List;
-
-import util.NestedInteger;
 
 /**
  * // This is the interface that allows for creating nested lists.
@@ -55,7 +55,6 @@ import util.NestedInteger;
  * public List<NestedInteger> getList();
  * }
  */
-
 
 
 class NestedIterator implements Iterator<Integer> {

@@ -5,7 +5,7 @@ import util.ListNode;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class M2_AddTwoNumbersTest {
+public class SolutionTest {
     @Test
     public void test_addTwoNumbers() {
         ListNode n1 = new ListNode(2);

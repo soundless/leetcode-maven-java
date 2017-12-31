@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class M3_LongestSubstringWithoutRepeatingCharactersTest {
+public class SolutionTest {
     @Test
     public void testSolution() {
         HashMap<String, Integer> hashMap = new HashMap<>();

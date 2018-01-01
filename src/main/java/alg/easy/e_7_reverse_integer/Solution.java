@@ -42,6 +42,21 @@ package alg.easy.e_7_reverse_integer;
 
 class Solution {
     public int reverse(int x) {
-        return 0;
+        int flag = 1;
+        if (x < 0) {
+            flag = -1;
+            x *= -1;
+        }
+        long result = 0;
+        while (x > 0) {
+            result = result * 10 + x % 10;
+            if ((flag > 0 && result > Integer.MAX_VALUE) ||
+                    (flag < 0 && flag * result < Integer.MIN_VALUE)) {
+                return 0;
+            }
+            x /= 10;
+        }
+
+        return flag * (int) result;
     }
 }

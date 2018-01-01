@@ -55,6 +55,38 @@ package alg.median.m_8_string_to_integer_atoi;
 
 class Solution {
     public int myAtoi(String str) {
-        return 0;
+        long result = 0;
+        if (str == null || str.length() == 0) {
+            return (int) result;
+        }
+
+        str = str.trim();
+
+        int flag = 1;
+        if (str.charAt(0) == '-') {
+            flag = -1;
+            str = str.substring(1);
+        } else if (str.charAt(0) == '+') {
+            str = str.substring(1);
+        }
+
+        for (int i = 0; i < str.length(); i++) {
+            int charVal = Character.getNumericValue(str.charAt(i));
+            int zeroVal = Character.getNumericValue('0');
+            int nineVal = Character.getNumericValue('9');
+            if (charVal >= zeroVal && charVal <= nineVal) {
+                result = result * 10 + charVal;
+            } else {
+                break;
+            }
+        }
+        result *= flag;
+        if (result > Integer.MAX_VALUE) {
+            result = Integer.MAX_VALUE;
+        }
+        if (result < Integer.MIN_VALUE) {
+            result = Integer.MIN_VALUE;
+        }
+        return (int) result;
     }
 }

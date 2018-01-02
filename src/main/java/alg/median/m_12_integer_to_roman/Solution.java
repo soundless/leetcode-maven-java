@@ -16,8 +16,34 @@
  */
 package alg.median.m_12_integer_to_roman;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 class Solution {
     public String intToRoman(int num) {
-        return null;
+        Map<Integer, String> hash = new LinkedHashMap<>();
+        hash.put(1000, "M");
+        hash.put(900, "CM");
+        hash.put(500, "D");
+        hash.put(400, "CD");
+        hash.put(100, "C");
+        hash.put(90, "XC");
+        hash.put(50, "L");
+        hash.put(40, "XL");
+        hash.put(10, "X");
+        hash.put(9, "IX");
+        hash.put(5, "V");
+        hash.put(4, "IV");
+        hash.put(1, "I");
+        String result = "";
+        while (num > 0) {
+            for (int key: hash.keySet()) {
+                while (num / key > 0) {
+                    result += hash.get(key);
+                    num -= key;
+                }
+            }
+        }
+        return result;
     }
 }

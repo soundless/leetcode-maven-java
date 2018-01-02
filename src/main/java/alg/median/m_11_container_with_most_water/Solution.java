@@ -22,6 +22,22 @@ package alg.median.m_11_container_with_most_water;
 
 class Solution {
     public int maxArea(int[] height) {
-        return 0;
+        if (height.length < 2) {
+            return 0;
+        }
+        int volume = 0, left = 0, right = height.length - 1;
+        while (left < right) {
+            int temp = Math.min(height[left], height[right]) * (right - left);
+            if (temp > volume) {
+                volume = temp;
+            }
+            if (height[left] > height[right]) {
+                right--;
+            }
+            else {
+                left++;
+            }
+        }
+        return volume;
     }
 }

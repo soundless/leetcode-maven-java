@@ -9,7 +9,7 @@
  * Total Submissions: 770.8K
  * Testcase Example:  '-2147483648'
  *
- * Determine whether an integer is a palindrome. Do this without extra space.
+ * Determine whether an integer is a palindrome. Do this without extra space
  *
  * click to show spoilers.
  *

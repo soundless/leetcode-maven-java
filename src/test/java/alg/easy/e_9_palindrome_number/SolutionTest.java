@@ -16,10 +16,10 @@ public class SolutionTest {
         tests.put(1221, true);
         tests.put(-12321, false);
         tests.put(Integer.MIN_VALUE, false);
+        tests.put(1234567899, false);
         tests.put(0, true);
         for (Map.Entry m : tests.entrySet()) {
             Solution solution = new Solution();
-            System.out.println(m.getKey());
             assertEquals(m.getValue(), solution.isPalindrome((int) m.getKey()));
         }
     }

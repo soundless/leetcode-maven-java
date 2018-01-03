@@ -24,20 +24,14 @@ class Solution {
         }
 
         longest = strs[0];
-        int i = 0, j = 1;
-        while (i < longest.length()) {
-            for (; j < length; j++) {
-                if (strs[j].length() < longest.length() && strs[j].charAt(i) == longest.charAt(i)) {
-                    i++;
+        for (int i = 0; i < longest.length(); i++) {
+            for (int j = 1; j < length; j++) {
+                if (strs[j].length() > longest.length() ||
+                        strs[j].charAt(i) != longest.charAt(i)) {
+                    return longest.substring(0, i);
                 }
-                else {
-                    j = length;
-                }
-            }
-            if (j == length) {
-                break;
             }
         }
-        return longest.substring(0, i);
+        return longest;
     }
 }

@@ -35,15 +35,15 @@ class Solution {
         hash.put(5, "V");
         hash.put(4, "IV");
         hash.put(1, "I");
-        String result = "";
+        StringBuilder result = new StringBuilder();
         while (num > 0) {
             for (int key: hash.keySet()) {
                 while (num / key > 0) {
-                    result += hash.get(key);
+                    result.append(hash.get(key));
                     num -= key;
                 }
             }
         }
-        return result;
+        return result.toString();
     }
 }

@@ -1,4 +1,5 @@
-all: test
+all:
+	mvn clean test --quiet
 
 test:
 	mvn clean test

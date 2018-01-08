@@ -5,5 +5,5 @@ test:
 	mvn clean test
 
 # Usage: make git-"New check-in"
-git-%: 
+git-%:
 	mvn clean; git add -u . && git commit -m "$(@:git-%=%)" && git push origin master

@@ -21,8 +21,35 @@
  */
 package alg.median.m_16_3sum_closest;
 
+import java.util.Arrays;
+
 class Solution {
     public int threeSumClosest(int[] nums, int target) {
-        return 0;
+        int min = Integer.MAX_VALUE;
+        int result = 0;
+        Arrays.sort(nums);
+        outer_loop:
+        for (int i = 0; i < nums.length - 2; i++) {
+            int j = i + 1;
+            int k = nums.length - 1;
+            while (j < k) {
+                int sum = nums[i] + nums[j] + nums[k];
+                int diff = Math.abs(target - sum);
+                if (diff == 0) {
+                    result = sum;
+                    break outer_loop;
+                }
+                if (diff < min) {
+                    min = diff;
+                    result = sum;
+                }
+                if (sum < target) {
+                    j++;
+                } else {
+                    k--;
+                }
+            }
+        }
+        return result;
     }
 }

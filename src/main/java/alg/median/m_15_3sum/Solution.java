@@ -27,10 +27,33 @@
  */
 package alg.median.m_15_3sum;
 
-import java.util.List;
+import java.util.*;
 
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
-        return null;
+        List<List<Integer>> result = new ArrayList<>();
+        if (nums.length == 0) {
+            return result;
+        }
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length; i++) {
+            Map<Integer, Integer> hash = new HashMap<>();
+            for (int j = i + 1; j < nums.length; j++) {
+                int temp = 0 - nums[i] - nums[j];
+                if (hash.containsKey(temp)) {
+                    List<Integer> list = new ArrayList<>();
+                    list.add(nums[i]);
+                    list.add(temp);
+                    list.add(nums[j]);
+                    if (!result.contains(list)) {
+                        result.add(list);
+                    }
+                }
+                else {
+                    hash.put(nums[j], j);
+                }
+            }
+        }
+        return result;
     }
 }

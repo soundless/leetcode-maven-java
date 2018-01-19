@@ -18,8 +18,39 @@
  */
 package alg.easy.e_20_valid_parentheses;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+
 class Solution {
     public boolean isValid(String s) {
-        return false;
+        if (s == null || s.length() == 0) {
+            return true;
+        }
+
+        Map<Character, Character> map = new HashMap<>();
+        map.put('(', ')');
+        map.put('[', ']');
+        map.put('{', '}');
+
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (map.containsKey(s.charAt(i))) {
+                stack.push(s.charAt(i));
+            }
+            else {
+                if (stack.isEmpty()) {
+                    return false;
+                }
+                if (map.get(stack.peek()) != s.charAt(i)) {
+                    return false;
+                }
+                else {
+                    stack.pop();
+                }
+            }
+        }
+
+        return stack.isEmpty();
     }
 }

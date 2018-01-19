@@ -47,19 +47,19 @@ class Solution {
         while (l1 != null || l2 != null || carry != 0) {
             int v1 = 0, v2 = 0;
             if (l1 != null) {
-                v1 = l1.val;
-                l1 = l1.next;
+                v1 = l1.getVal();
+                l1 = l1.getNext();
             }
             if (l2 != null) {
-                v2 = l2.val;
-                l2 = l2.next;
+                v2 = l2.getVal();
+                l2 = l2.getNext();
             }
             int tmp = v1 + v2 + carry;
             carry = tmp / 10;
             ListNode node = new ListNode(tmp % 10);
-            head.next = node;
+            head.setNext(node);
             head = node;
         }
-        return dummy.next;
+        return dummy.getNext();
     }
 }

@@ -29,10 +29,29 @@
  */
 package alg.median.m_18_4sum;
 
-import java.util.List;
+import java.util.*;
 
 class Solution {
     public List<List<Integer>> fourSum(int[] nums, int target) {
-        return null;
+        List<List<Integer>> result = new ArrayList<>();
+        if (nums.length == 0 ) {
+            return result;
+        }
+        Arrays.sort(nums);
+        for (int a = 0; a < nums.length; a++) {
+            for (int b = a + 1; b < nums.length;  b++) {
+                Map<Integer, Integer> map = new HashMap<>();
+                for (int c = b + 1; c < nums.length; c++) {
+                    int num_d = target - nums[a] - nums[b] - nums[c];
+                    if (map.containsKey(num_d)) {
+                        result.add(Arrays.asList(nums[a], nums[b], nums[c], num_d));
+                    }
+                    else {
+                        map.put(nums[c],c);
+                    }
+                }
+            }
+        }
+        return result;
     }
 }

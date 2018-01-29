@@ -29,10 +29,33 @@
  */
 package alg.median.m_22_generate_parentheses;
 
+import java.util.ArrayList;
 import java.util.List;
 
 class Solution {
-    public List<String> generateParenthesis(int n) {
-        return null;
+    public List<String> generateParentheses(int n) {
+        List<String> result = new ArrayList<>();
+        dfs(result, "", n, n);
+        return result;
+    }
+
+    private void dfs(List<String> result, String temp, int left, int right) {
+        // left > right means more ")" than "(", we should stop here
+        if (left > right) {
+            return;
+        }
+
+        if (left == 0 && right == 0) {
+            result.add(temp);
+            return;
+        }
+
+        if (left > 0) {
+            dfs(result, temp + "(", left - 1, right);
+        }
+
+        if (right > 0) {
+            dfs(result, temp + ")", left, right - 1);
+        }
     }
 }
